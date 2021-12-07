@@ -12,6 +12,7 @@ $fields['sign']="dev-08ceccb0-572e-11ec-91c4-85d2e994b59b";
 
 echo json_encode(json_request($saldo,$fields));
 
+//echo json_encode($fields);
 
 function json_request($fullurl,$fields)
 {
@@ -21,6 +22,7 @@ function json_request($fullurl,$fields)
 		
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_HEADER, 0);
+		curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
 		curl_setopt($ch, CURLOPT_VERBOSE, 1);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
