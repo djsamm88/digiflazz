@@ -26,7 +26,7 @@ function json_request($fullurl,$fields)
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 		curl_setopt($ch, CURLOPT_FAILONERROR, 0);
-		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
 		curl_setopt($ch, CURLOPT_URL, $fullurl);
 		curl_setopt($ch, CURLOPT_POSTFIELDS,$jsonnya);
 		$returned =  curl_exec($ch);
