@@ -4,15 +4,18 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
 header('Content-Type: application/json');
 
-$saldo = "https://api.digiflazz.com/v1/cek-saldo";
+$saldo 		= "https://api.digiflazz.com/v1/price-list";
+$username 	= "rorazaoEQ5xo";
+$key 		= "dev-08ceccb0-572e-11ec-91c4-85d2e994b59b";
 
-$fields['cmd']="deposit";
-$fields['username']="rorazaoEQ5xo";
-$fields['sign']="dev-08ceccb0-572e-11ec-91c4-85d2e994b59b";
+$fields['cmd']		="deposit";
+$fields['username']	=$username;
+$fields['sign']=md5($username.$key."pricelist");
 
 echo json_encode(json_request($saldo,$fields));
 
 //echo json_encode($fields);
+
 
 function json_request($fullurl,$fields)
 {
