@@ -4,19 +4,16 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
 header('Content-Type: application/json');
 
-echo "xxxxxx";
-$fields = json_decode(file_get_contents('php://input'));
+$json = json_decode(file_get_contents('php://input'));
 
 //var_dump($_POST);
 
-$url = $json['url'];
-unset($json['url']);
-
-//echo json_encode(json_request($url,$fields));
-var_dump($fields);
+$url = $json->url;
+unset($json->url);
 
 
-//echo json_encode($fields);
+//var_dump(json_encode($json));
+echo json_encode(json_request($url,$json));
 
 
 function json_request($fullurl,$fields)
