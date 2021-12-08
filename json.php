@@ -6,6 +6,8 @@ header('Content-Type: application/json');
 
 $fields = json_decode(file_get_contents('php://input'));
 
+var_dump($_POST);
+
 $url = $json['url'];
 unset($json['url']);
 
