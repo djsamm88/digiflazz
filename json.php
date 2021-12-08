@@ -4,7 +4,7 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
 header('Content-Type: application/json');
 
-$fields = json_encode(file_get_contents('php://input'));
+$fields = json_decode(file_get_contents('php://input'));
 
 $url = $json['url'];
 unset($json['url']);
