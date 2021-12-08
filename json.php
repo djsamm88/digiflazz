@@ -6,13 +6,13 @@ header('Content-Type: application/json');
 
 $fields = json_decode(file_get_contents('php://input'));
 
-var_dump($_POST);
+//var_dump($_POST);
 
 $url = $json['url'];
 unset($json['url']);
 
-//echo json_encode(json_request($url,$fields));
-var_dump($fields);
+echo json_encode(json_request($url,$fields));
+//var_dump($fields);
 
 //echo json_encode($fields);
 
